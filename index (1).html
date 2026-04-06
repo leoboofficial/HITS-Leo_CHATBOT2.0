@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About HITS - Leo Bot 2.0</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        :root {
+            --hits-blue: #003366;
+            --hits-gold: #c5a059;
+        }
+
+        body { 
+            margin: 0; padding: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Main Content Container */
+        .content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        h1, h2 { color: var(--hits-blue); border-bottom: 2px solid var(--hits-gold); padding-bottom: 10px; }
+        h1 { font-size: 2.5rem; text-align: center; margin-bottom: 30px; }
+        
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 5px solid var(--hits-blue);
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            background: var(--hits-blue);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* --- CHATBOT UI --- */
+        .chat-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--hits-blue); color: white; border-radius: 50%;
+            width: 70px; height: 70px; cursor: pointer; border: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4); font-size: 35px;
+            z-index: 1002; transition: transform 0.3s;
+        }
+        .chat-btn:hover { transform: scale(1.1); }
+
+        .chat-window {
+            position: fixed; bottom: 110px; right: 30px;
+            width: 400px; height: 600px; background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+            display: none; flex-direction: column; border-radius: 15px; 
+            overflow: hidden; z-index: 1001; border: 1px solid var(--hits-blue);
+        }
+
+        .header { 
+            background: var(--hits-blue); color: white; padding: 15px; 
+            font-weight: bold; display: flex; justify-content: space-between; align-items: center;
+        }
+        .min-btn { background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+
+        .messages { flex: 1; padding: 15px; overflow-y: auto; background: #f4f7f6; display: flex; flex-direction: column; }
+        
+        .bot-msg, .user-msg { 
+            margin-bottom: 15px; padding: 12px; border-radius: 12px; 
+            max-width: 85%; font-size: 14px; word-wrap: break-word; 
+        }
+
+        .bot-msg { background: white; align-self: flex-start; border: 1px solid #ddd; }
+        .user-msg { background: var(--hits-blue); color: white; align-self: flex-end; }
+
+        .bot-msg table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        .bot-msg th, .bot-msg td { border: 1px solid #ddd; padding: 6px; }
+        .bot-msg th { background: var(--hits-blue); color: white; }
+
+        .input-area { display: flex; padding: 15px; background: white; border-top: 1px solid #eee; gap: 10px; }
+        input { flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 25px; outline: none; }
+        .send-btn { background: var(--hits-blue); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; }
+
+        @media (max-width: 600px) {
+            .content-container { padding: 20px; margin: 10px; }
+            .chat-window { width: 90%; right: 5%; bottom: 90px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+        <h1>About Hindustan Institute of Technology & Science</h1>
+        
+        <p><strong>HINDUSTAN INSTITUTE OF TECHNOLOGY & SCIENCE (HITS)</strong> is a leading prestigious and recognized institution in India, located at Chennai, Tamil Nadu. Commenced in 1985, it offers a wide spectrum of Undergraduate, Postgraduate, Diploma, Research & Doctoral Programs in diverse fields of Engineering, Technology, Architecture, Management, Law, Fashion Design, Aviation, Applied Sciences, Allied Sciences, and Arts and Sciences.</p>
+
+        <p>HITS is recognised as Deemed to be University by UGC in 2008 and received Category-II status from MHRD which empowers HITS with Academic Autonomy. The technical courses at UG and PG levels are approved by AICTE. NBA has certified five undergraduate programs offered by Aeronautical Engineering, Automobile Engineering, Computer Science and Engineering, Civil Engineering, and Mechanical Engineering under Tier 1 category.</p>
+
+        <div class="highlight-box">
+            "To Make Every Man a Success and No Man a Failure" <br>
+            <small>— Late Dr. K.C.G. Verghese, Founder-Chairman</small>
+        </div>
+
+        <h2>Accolades and Rankings</h2>
+        <p>In the 2022 Ranking List, the National Institutional Ranking Framework (NIRF) has ranked us in the 151-200 band in the overall category. Under the university category we were placed in the band between 101-150. The Institution also achieved Excellence in Aeronautical and Aerospace Engineering in the Times Engineering Institutes Ranking Survey.</p>
+
+        <h2>Why Hindustan?</h2>
+        <div class="stats-grid">
+            <div class="stat-item">✓ Above 75% Annual Placement Conversion</div>
+            <div class="stat-item">✓ 14 Centres of Excellence for Research</div>
+            <div class="stat-item">✓ Global Collaborations & Faculty Exchange</div>
+            <div class="stat-item">✓ Advanced E-Learning Excellence (QS I-GAUGE)</div>
+            <div class="stat-item">✓ Industry Standard Labs & Workshops</div>
+            <div class="stat-item">✓ Outcome-Based Education (OBE) Practices</div>
+        </div>
+
+        <h2>Research and Global Impact</h2>
+        <p>HITS participated in the Global Times Higher Education (THE) Impact Rankings 2022 and achieved an overall rank between 400-600. The institution achieved significant milestones in Sustainable Development Goals, including Clean Water (SDG6) and Responsible Consumption (SDG12). HITS has curved a niche for itself through established global collaborations to promote Faculty & Student Exchange Programs, Joint Research, and Consultancy Projects.</p>
+    </div>
+
+    <button class="chat-btn" id="lionBtn" onclick="toggleChat()">🦁</button>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="header">
+            <span>🦁 HITS Leo Bot 2.0</span>
+            <button class="min-btn" onclick="toggleChat()">−</button>
+        </div>
+        
+        <div class="messages" id="msgBox">
+            <div class="bot-msg">
+                <b>Welcome to HITS!</b><br>
+                I am your specialized assistant for <b>Admissions 2026</b> and <b>Aeronautical Engineering</b>.<br><br>
+                How can I help you today?
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Ask about Aero or Admissions..." 
+                   onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button class="send-btn" onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            const btn = document.getElementById('lionBtn');
+            if (win.style.display === 'none' || win.style.display === '') {
+                win.style.display = 'flex';
+                btn.style.display = 'none';
+                document.getElementById('userInput').focus();
+            } else {
+                win.style.display = 'none';
+                btn.style.display = 'block';
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const msgBox = document.getElementById('msgBox');
+            const userText = input.value.trim();
+            if (!userText) return;
+
+            msgBox.innerHTML += `<div class="user-msg">${userText}</div>`;
+            input.value = '';
+            msgBox.scrollTop = msgBox.scrollHeight;
+
+            const loadingId = "load-" + Date.now();
+            msgBox.innerHTML += `<div id="${loadingId}" class="bot-msg" style="color:gray;"><i>Leo is analyzing...</i></div>`;
+            msgBox.scrollTop = msgBox.scrollHeight;
+            
+            try {
+                // Ensure this matches your live Render URL
+                const response = await fetch('https://leochatbot2-0.onrender.com/chat', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({text: userText})
+                });
+                
+                const data = await response.json();
+                document.getElementById(loadingId).remove();
+
+                const formattedRes = marked.parse(data.response);
+                msgBox.innerHTML += `<div class="bot-msg"><b>Leo Bot:</b><br>${formattedRes}</div>`;
+            } catch (error) {
+                document.getElementById(loadingId).innerHTML = "<b>Error:</b> Could not reach Leo Bot server.";
+            }
+            msgBox.scrollTop = msgBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
